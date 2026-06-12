@@ -78,7 +78,7 @@ requires flipping one boolean in `flags.js`.
 
 | Phase | Name | Status |
 |-------|------|--------|
-| 0 | Substrate (Project Init, Tooling, Manifest, Flags) | Pending |
+| 0 | Substrate (Project Init, Tooling, Manifest, Flags) | In Progress — code complete, Vercel connection TBC |
 | 1 | Parser Engine (PDF → structured JSON) | Pending |
 | 2 | Book Shell & Navigation | Pending |
 | 3 | Chapter Browser & Reader | Pending |

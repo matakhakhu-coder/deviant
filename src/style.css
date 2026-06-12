@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-dv-void text-dv-ghost font-body;
+  }
+
+  #app {
+    min-height: 100vh;
+  }
+
+  a, button, input, select, textarea, [role="button"] {
+    min-height: 48px;
+  }
+
+  ::selection {
+    background-color: theme('colors.dv-crimson');
+    color: theme('colors.dv-ghost');
+  }
+}

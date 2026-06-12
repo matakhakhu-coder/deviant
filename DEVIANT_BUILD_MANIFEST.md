@@ -13,7 +13,7 @@
 
 | Phase | Name | Status |
 |-------|------|--------|
-| 0 | Substrate | Pending |
+| 0 | Substrate | In Progress — code complete, Vercel connection TBC |
 | 1 | Parser Engine | Pending |
 | 2 | Book Shell & Navigation | Pending |
 | 3 | Chapter Browser & Reader | Pending |

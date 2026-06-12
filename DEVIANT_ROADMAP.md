@@ -14,32 +14,32 @@
 **Delivers:** The technical skeleton. No user-visible UI. Working tooling,
 directory structure, configuration architecture, and a live staging URL.
 
-- [ ] `git init` — repository initialized
-- [ ] `npm create vite@latest` — Vite scaffolded (vanilla JS template)
-- [ ] Tailwind CSS 3.x installed and configured (`tailwind.config.js`, `postcss.config.js`)
-- [ ] Custom design tokens registered: `dv-*` palette, Cinzel + Inter + JetBrains Mono
-- [ ] `src/core/manifest.js` created — `DEVIANT` object with all known fields, nulls for TBC
-  - [ ] `DEVIANT.platform` — name, slug, staging URL (null), production URL (null)
-  - [ ] `DEVIANT.books['the-deviants']` — full book seed data (confirmed fields only)
-  - [ ] `DEVIANT.books['the-deviants'].knownCharacters` — 6 POV + Loki, with IDs and aliases
-  - [ ] `DEVIANT.books['the-deviants'].knownLocations` — SunCity, Gen Pop, R&D
-  - [ ] `DEVIANT.books['the-deviants'].knownFactions` — The Deviants, Defiance
-  - [ ] `DEVIANT.integrations` — all credentials null (TBC)
-- [ ] `src/core/flags.js` created — all FLAGS set to `true` (full simulation)
-- [ ] Integration adapter stubs created (simulation path only):
-  - [ ] `src/core/integrations/annotations.js`
-  - [ ] `src/core/integrations/search.js`
-- [ ] `src/core/bookLoader.js` created — stub that imports `content/the-deviants.json` (null-safe on missing file)
-- [ ] `src/core/linker.js` created — stub (identity function: returns text unchanged)
-- [ ] `src/core/router.js` created — three render paths scaffolded
-- [ ] `src/main.js` created — `mountCustomer`, `mountAdmin`, `mountReader` scaffolded
-- [ ] `index.html` created — Google Fonts loaded (Cinzel, Inter, JetBrains Mono), app div, toast div, single script entry
-- [ ] `style.css` created — 48px tap target rule, base layer resets, dark background on html/body
-- [ ] `vercel.json` created — SPA catch-all rewrite + staging noindex headers
-- [ ] `public/robots.txt` created — `Disallow: /` (staging mode)
-- [ ] `sources/` directory created — `.gitkeep` + `sources/.gitignore` (ignores *.pdf to avoid committing large binaries)
-- [ ] `content/` directory created — `.gitkeep` (JSON files will live here)
-- [ ] `scripts/launch.js` created — scans nulls in manifest, scans `true` flags, rewrites robots.txt
+- [x] `git init` — repository initialized
+- [x] `npm create vite@latest` — Vite scaffolded (vanilla JS template)
+- [x] Tailwind CSS 3.x installed and configured (`tailwind.config.js`, `postcss.config.js`)
+- [x] Custom design tokens registered: `dv-*` palette, Cinzel + Inter + JetBrains Mono
+- [x] `src/core/manifest.js` created — `DEVIANT` object with all known fields, nulls for TBC
+  - [x] `DEVIANT.platform` — name, slug, staging URL (null), production URL (null)
+  - [x] `DEVIANT.books['the-deviants']` — full book seed data (confirmed fields only)
+  - [x] `DEVIANT.books['the-deviants'].knownCharacters` — 6 POV + Loki, with IDs and aliases
+  - [x] `DEVIANT.books['the-deviants'].knownLocations` — SunCity, Gen Pop, R&D
+  - [x] `DEVIANT.books['the-deviants'].knownFactions` — The Deviants, Defiance
+  - [x] `DEVIANT.integrations` — all credentials null (TBC)
+- [x] `src/core/flags.js` created — `FLAGS` object (annotationsSimulated: true, searchExternal: false — client-side simulation defaults)
+- [x] Integration adapter stubs created (simulation path only):
+  - [x] `src/core/integrations/annotations.js`
+  - [x] `src/core/integrations/search.js`
+- [x] `src/core/bookLoader.js` created — stub that imports `content/the-deviants.json` (null-safe on missing file)
+- [x] `src/core/linker.js` created — stub (identity function: returns text unchanged)
+- [x] `src/core/router.js` created — three render paths scaffolded
+- [x] `src/main.js` created — `mountCustomer`, `mountAdmin`, `mountReader` scaffolded
+- [x] `index.html` created — Google Fonts loaded (Cinzel, Inter, JetBrains Mono), app div, toast div, single script entry
+- [x] `style.css` created — 48px tap target rule, base layer resets, dark background on html/body
+- [x] `vercel.json` created — SPA catch-all rewrite + staging noindex headers
+- [x] `public/robots.txt` created — `Disallow: /` (staging mode)
+- [x] `sources/` directory created — `.gitkeep` + `sources/.gitignore` (ignores *.pdf to avoid committing large binaries)
+- [x] `content/` directory created — `.gitkeep` (JSON files will live here)
+- [x] `scripts/launch.js` created — scans nulls in manifest, scans `true` flags, rewrites robots.txt
 - [ ] Vercel project connected to GitHub repo — push triggers auto-deploy
 - [ ] Staging URL live and returning 200
 
