@@ -77,7 +77,9 @@
       "mentions": {
         "characters": [
           "jonathan-reed",
-          "andrew-reed"
+          "andrew-reed",
+          "martin-creswell",
+          "tryon-street"
         ],
         "locations": [],
         "factions": []
@@ -95,7 +97,8 @@
         "characters": [
           "miles-kelly",
           "avery-melblac",
-          "sarah-may"
+          "sarah-may",
+          "mrs-williams"
         ],
         "locations": [],
         "factions": [
@@ -114,7 +117,10 @@
       "mentions": {
         "characters": [
           "miles-kelly",
-          "sarah-may"
+          "sarah-may",
+          "amala-jones",
+          "mrs-williams",
+          "naberius"
         ],
         "locations": [],
         "factions": []
@@ -132,7 +138,9 @@
         "characters": [
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "mrs-williams",
+          "naberius"
         ],
         "locations": [],
         "factions": [
@@ -151,7 +159,11 @@
       "mentions": {
         "characters": [
           "jonathan-reed",
-          "andrew-reed"
+          "andrew-reed",
+          "jennifer",
+          "ruby",
+          "carlos-valdez",
+          "ambrose"
         ],
         "locations": [],
         "factions": []
@@ -172,7 +184,13 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "martin-creswell",
+          "carlos-valdez",
+          "damien-videl",
+          "naberius"
         ],
         "locations": [
           "suncity"
@@ -213,7 +231,11 @@
           "miles-kelly",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "alexandra-turner",
+          "naberius"
         ],
         "locations": [],
         "factions": []
@@ -234,7 +256,12 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "martin-creswell",
+          "damien-videl",
+          "alexandra-turner"
         ],
         "locations": [],
         "factions": [
@@ -258,7 +285,12 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "martin-creswell",
+          "alexandra-turner",
+          "naberius"
         ],
         "locations": [],
         "factions": []
@@ -279,7 +311,10 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "chief-singh"
         ],
         "locations": [],
         "factions": [
@@ -302,7 +337,15 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "tryon-street",
+          "chief-singh",
+          "damien-videl",
+          "alexandra-turner",
+          "naberius",
+          "belial"
         ],
         "locations": [],
         "factions": [
@@ -341,7 +384,12 @@
           "jonathan-reed",
           "avery-melblac",
           "andrew-reed",
-          "sarah-may"
+          "sarah-may",
+          "amala-jones",
+          "steven-grant",
+          "martin-creswell",
+          "damien-videl",
+          "alexandra-turner"
         ],
         "locations": [],
         "factions": [
@@ -363,7 +411,11 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "alexandra-turner",
+          "naberius"
         ],
         "locations": [],
         "factions": [
@@ -382,7 +434,8 @@
       "mentions": {
         "characters": [
           "miles-kelly",
-          "sarah-may"
+          "sarah-may",
+          "naberius"
         ],
         "locations": [],
         "factions": [
@@ -403,7 +456,10 @@
           "miles-kelly",
           "avery-melblac",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "steven-grant",
+          "naberius",
+          "belial"
         ],
         "locations": [],
         "factions": [
@@ -423,7 +479,13 @@
         "characters": [
           "jonathan-reed",
           "avery-melblac",
-          "sarah-may"
+          "sarah-may",
+          "amala-jones",
+          "jennifer",
+          "ruby",
+          "carlos-valdez",
+          "ambrose",
+          "damien-videl"
         ],
         "locations": [],
         "factions": [
@@ -446,7 +508,14 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "jennifer",
+          "ruby",
+          "damien-videl",
+          "alexandra-turner",
+          "belial"
         ],
         "locations": [],
         "factions": []
@@ -467,7 +536,12 @@
           "avery-melblac",
           "andrew-reed",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "damien-videl",
+          "naberius",
+          "ellis"
         ],
         "locations": [],
         "factions": []
@@ -486,7 +560,13 @@
           "jonathan-reed",
           "avery-melblac",
           "andrew-reed",
-          "sarah-may"
+          "sarah-may",
+          "amala-jones",
+          "mrs-williams",
+          "martin-creswell",
+          "detective-driscoll",
+          "damien-videl",
+          "ellis"
         ],
         "locations": [],
         "factions": [
@@ -525,7 +605,12 @@
           "jonathan-reed",
           "avery-melblac",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "naberius",
+          "belial",
+          "ellis"
         ],
         "locations": [],
         "factions": [
@@ -547,7 +632,15 @@
           "jonathan-reed",
           "avery-melblac",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "detective-driscoll",
+          "carlos-valdez",
+          "ambrose",
+          "naberius",
+          "belial",
+          "ellis"
         ],
         "locations": [],
         "factions": [
@@ -569,7 +662,18 @@
           "jonathan-reed",
           "avery-melblac",
           "sarah-may",
-          "atticus-finch"
+          "atticus-finch",
+          "amala-jones",
+          "steven-grant",
+          "martin-creswell",
+          "detective-driscoll",
+          "jennifer",
+          "ruby",
+          "carlos-valdez",
+          "ambrose",
+          "alexandra-turner",
+          "belial",
+          "ellis"
         ],
         "locations": [],
         "factions": [
@@ -793,6 +897,277 @@
       "appearances": [
         1
       ]
+    },
+    {
+      "id": "amala-jones",
+      "name": "Amala Jones",
+      "aliases": [
+        "Amala"
+      ],
+      "role": "Deviant — Abigor demi, Defiance hacker/operations",
+      "povChapters": [],
+      "appearances": [
+        6,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "steven-grant",
+      "name": "Steven Grant",
+      "aliases": [
+        "Steven",
+        "Steve"
+      ],
+      "role": "Deviant — Surgat demi",
+      "povChapters": [],
+      "appearances": [
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        20,
+        22,
+        23,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "mrs-williams",
+      "name": "Mrs Williams",
+      "aliases": [],
+      "role": "Senior Defiance agent",
+      "povChapters": [],
+      "appearances": [
+        5,
+        6,
+        7,
+        24
+      ]
+    },
+    {
+      "id": "martin-creswell",
+      "name": "Martin Creswell",
+      "aliases": [
+        "Martin"
+      ],
+      "role": "Senior Defiance leadership",
+      "povChapters": [],
+      "appearances": [
+        4,
+        9,
+        12,
+        13,
+        17,
+        24,
+        28
+      ]
+    },
+    {
+      "id": "tryon-street",
+      "name": "Tryon Street",
+      "aliases": [
+        "Tryon",
+        "Mr. Street"
+      ],
+      "role": "Dr Andrew Reed's former colleague, defected to the Devil's Den",
+      "povChapters": [],
+      "appearances": [
+        4,
+        15
+      ]
+    },
+    {
+      "id": "detective-driscoll",
+      "name": "Detective Driscoll",
+      "aliases": [
+        "Driscoll"
+      ],
+      "role": "Police detective, ally to Jonathan Reed",
+      "povChapters": [],
+      "appearances": [
+        24,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "chief-singh",
+      "name": "Chief Singh",
+      "aliases": [
+        "Singh"
+      ],
+      "role": "Police chief, ally to Jonathan Reed",
+      "povChapters": [],
+      "appearances": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "jennifer",
+      "name": "Jennifer",
+      "aliases": [],
+      "role": "Witch, ally of Jonathan Reed",
+      "povChapters": [],
+      "appearances": [
+        8,
+        21,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "aliases": [],
+      "role": "Witch, ally of Jonathan Reed",
+      "povChapters": [],
+      "appearances": [
+        8,
+        21,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "carlos-valdez",
+      "name": "Carlos Valdez",
+      "aliases": [
+        "Carlos"
+      ],
+      "role": "South East Grotto member, defected to the Devil's Den",
+      "povChapters": [],
+      "appearances": [
+        8,
+        9,
+        21,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "ambrose",
+      "name": "Ambrose",
+      "aliases": [],
+      "role": "South East Grotto member, defected to the Devil's Den",
+      "povChapters": [],
+      "appearances": [
+        8,
+        21,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "damien-videl",
+      "name": "Damien Videl",
+      "aliases": [
+        "Damien"
+      ],
+      "role": "Devil's Den high priest, killer of Dr Andrew Reed",
+      "povChapters": [],
+      "appearances": [
+        9,
+        12,
+        15,
+        17,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "alexandra-turner",
+      "name": "Alexandra Turner",
+      "aliases": [
+        "Alexandra",
+        "Alex Turner"
+      ],
+      "role": "Devil's Den — Damien Videl's second-in-command",
+      "povChapters": [],
+      "appearances": [
+        11,
+        12,
+        13,
+        15,
+        17,
+        18,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "naberius",
+      "name": "Naberius",
+      "aliases": [],
+      "role": "Demon — Sarah May’s tormentor and former possessor",
+      "povChapters": [],
+      "appearances": [
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        18,
+        19,
+        20,
+        23,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "belial",
+      "name": "Belial",
+      "aliases": [],
+      "role": "Demon — Devil's Den founder, seeks to reunite the divine source",
+      "povChapters": [],
+      "appearances": [
+        15,
+        20,
+        22,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "ellis",
+      "name": "Ellis",
+      "aliases": [
+        "Pastor Ellis"
+      ],
+      "role": "Lucifer’s vessel, megachurch pastor",
+      "povChapters": [],
+      "appearances": [
+        23,
+        24,
+        26,
+        27,
+        28
+      ]
     }
   ],
   "locations": [
@@ -826,7 +1201,7 @@
     {
       "id": "the-deviants",
       "name": "The Deviants",
-      "type": "Malevolent cult",
+      "type": "Defiance's elite team of demon-possessed operatives (protagonists)",
       "appearances": [
         2,
         9,
@@ -858,6 +1233,12 @@
         27,
         28
       ]
+    },
+    {
+      "id": "devils-den",
+      "name": "Devil's Den",
+      "type": "Malevolent demon-worshipping cult (antagonists)",
+      "appearances": []
     }
   ],
   "entityIndex": {
@@ -998,6 +1379,190 @@
         1
       ]
     },
+    "amala-jones": {
+      "type": "character",
+      "chapters": [
+        6,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28
+      ]
+    },
+    "steven-grant": {
+      "type": "character",
+      "chapters": [
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        20,
+        22,
+        23,
+        26,
+        27,
+        28
+      ]
+    },
+    "mrs-williams": {
+      "type": "character",
+      "chapters": [
+        5,
+        6,
+        7,
+        24
+      ]
+    },
+    "martin-creswell": {
+      "type": "character",
+      "chapters": [
+        4,
+        9,
+        12,
+        13,
+        17,
+        24,
+        28
+      ]
+    },
+    "tryon-street": {
+      "type": "character",
+      "chapters": [
+        4,
+        15
+      ]
+    },
+    "detective-driscoll": {
+      "type": "character",
+      "chapters": [
+        24,
+        27,
+        28
+      ]
+    },
+    "chief-singh": {
+      "type": "character",
+      "chapters": [
+        14,
+        15
+      ]
+    },
+    "jennifer": {
+      "type": "character",
+      "chapters": [
+        8,
+        21,
+        22,
+        28
+      ]
+    },
+    "ruby": {
+      "type": "character",
+      "chapters": [
+        8,
+        21,
+        22,
+        28
+      ]
+    },
+    "carlos-valdez": {
+      "type": "character",
+      "chapters": [
+        8,
+        9,
+        21,
+        27,
+        28
+      ]
+    },
+    "ambrose": {
+      "type": "character",
+      "chapters": [
+        8,
+        21,
+        27,
+        28
+      ]
+    },
+    "damien-videl": {
+      "type": "character",
+      "chapters": [
+        9,
+        12,
+        15,
+        17,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    "alexandra-turner": {
+      "type": "character",
+      "chapters": [
+        11,
+        12,
+        13,
+        15,
+        17,
+        18,
+        22,
+        28
+      ]
+    },
+    "naberius": {
+      "type": "character",
+      "chapters": [
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        18,
+        19,
+        20,
+        23,
+        26,
+        27
+      ]
+    },
+    "belial": {
+      "type": "character",
+      "chapters": [
+        15,
+        20,
+        22,
+        26,
+        27,
+        28
+      ]
+    },
+    "ellis": {
+      "type": "character",
+      "chapters": [
+        23,
+        24,
+        26,
+        27,
+        28
+      ]
+    },
     "suncity": {
       "type": "location",
       "chapters": [
@@ -1048,6 +1613,10 @@
         27,
         28
       ]
+    },
+    "devils-den": {
+      "type": "faction",
+      "chapters": []
     }
   }
 }

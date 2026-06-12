@@ -59,7 +59,7 @@
 | Setting | SunCity (maximum security prison) | Confirmed |
 | Cover Art | TBC — extract from PDF or source separately | TBC |
 | Synopsis | "A malevolent organisation and cult exists in this world. Their influence is felt at virtually every level of society. They worship an entity of great evil. Dr Andrew Reed is a criminal profiler who founded an organisation to fight this cult. He called it Defiance. Together with his agents they attempt to fight this force of evil." | Confirmed |
-| Parsed JSON | `content/the-deviants.json` — 28 chapters, 7 characters, 3 locations, 2 factions | Confirmed |
+| Parsed JSON | `content/the-deviants.json` — 28 chapters, 23 characters, 3 locations, 3 factions | Confirmed |
 | Candidates JSON | `content/the-deviants-candidates.json` — Pass 2 entity candidates for manual review | Confirmed |
 | Annotations JSON | TBC — generated in Phase 9 | Pending |
 
@@ -79,9 +79,38 @@ these appear to have no single POV character. Parser will handle as ensemble cha
 
 #### Confirmed Supporting Characters — *The Deviants*
 
+Roster expanded by full read-through of `sources/the-deviants.pdf` (all 28 chapters) —
+the original 7-entry seed list (6 POV + Loki) excluded any "Deviant"/Defiance/Devil's Den
+character who never headlines a chapter title. The 16 entries below were identified by
+name/alias and cross-referenced against the parser's entity index (Pass 1 matchers).
+
 | Character Name | Role | Status |
 |---------------|------|--------|
 | Loki | Miles Kelly's cellmate, SunCity | Confirmed — appears in Chapter 1 prose |
+| Amala Jones | Deviant — Abigor demi, Defiance hacker/operations | Confirmed — 16 chapter appearances |
+| Steven Grant | Deviant — Surgat demi | Confirmed — 14 chapter appearances |
+| Mrs Williams | Senior Defiance agent | Confirmed — 4 chapter appearances |
+| Martin Creswell | Senior Defiance leadership | Confirmed — 7 chapter appearances |
+| Tryon Street | Dr Andrew Reed's former colleague, defected to the Devil's Den | Confirmed — 2 chapter appearances |
+| Detective Driscoll | Police detective, ally to Jonathan Reed | Confirmed — 3 chapter appearances |
+| Chief Singh | Police chief, ally to Jonathan Reed | Confirmed — 2 chapter appearances |
+| Jennifer | Witch, ally of Jonathan Reed | Confirmed — 4 chapter appearances |
+| Ruby | Witch, ally of Jonathan Reed | Confirmed — 4 chapter appearances |
+| Carlos Valdez | South East Grotto member, defected to the Devil's Den | Confirmed — 5 chapter appearances |
+| Ambrose | South East Grotto member, defected to the Devil's Den | Confirmed — 4 chapter appearances |
+| Damien Videl | Devil's Den high priest, killer of Dr Andrew Reed | Confirmed — 8 chapter appearances |
+| Alexandra Turner | Devil's Den — Damien Videl's second-in-command | Confirmed — 8 chapter appearances |
+| Naberius | Demon — Sarah May's tormentor and former possessor | Confirmed — 12 chapter appearances |
+| Belial | Demon — Devil's Den founder, seeks to reunite the divine source | Confirmed — 6 chapter appearances |
+| Ellis | Lucifer's vessel, megachurch pastor | Confirmed — 5 chapter appearances |
+
+Note: "Ellis" is modeled as a single character entry with alias "Pastor Ellis" only.
+"Lucifer" was deliberately NOT added as an alias — the bare word "Lucifer" recurs
+throughout the book as a mythological/lore term independent of Ellis's physical
+presence (chapters 1-22), and adding it as an alias would flood Ellis's appearance
+index with false positives. Ellis's identity as Lucifer's vessel is established
+through chapter prose (ch.23-28) and can be surfaced via the Phase 9 annotation layer
+or a future `relatedEntities` field rather than the entity-matching index.
 
 #### Confirmed Locations — *The Deviants*
 
@@ -93,10 +122,15 @@ these appear to have no single POV character. Parser will handle as ensemble cha
 
 #### Confirmed Factions — *The Deviants*
 
+Correction: "The Deviants" is the book's title and refers to Dr Andrew Reed's elite
+team of demon-possessed Defiance operatives (the protagonists), not an antagonist
+cult. The actual antagonist cult is "Devil's Den" — added below.
+
 | Faction Name | Type | Status |
 |-------------|------|--------|
-| The Deviants | Malevolent cult | Confirmed |
+| The Deviants | Defiance's elite team of demon-possessed operatives (protagonists) | Confirmed |
 | Defiance | Counter-organization founded by Dr Andrew Reed | Confirmed |
+| Devil's Den | Malevolent demon-worshipping cult (antagonists) | Confirmed |
 
 ---
 

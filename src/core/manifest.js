@@ -31,6 +31,22 @@ export const DEVIANT = {
         { id: 'sarah-may', name: 'Sarah May', aliases: ['Sarah'], role: 'Protagonist', povChapters: [6, 11, 18, 19, 26] },
         { id: 'atticus-finch', name: 'Atticus Finch', aliases: ['Atticus'], role: 'Protagonist', povChapters: [7, 13, 23] },
         { id: 'loki', name: 'Loki', aliases: [], role: "Miles Kelly's cellmate, SunCity", povChapters: [] },
+        { id: 'amala-jones', name: 'Amala Jones', aliases: ['Amala'], role: 'Deviant — Abigor demi, Defiance hacker/operations', povChapters: [] },
+        { id: 'steven-grant', name: 'Steven Grant', aliases: ['Steven', 'Steve'], role: 'Deviant — Surgat demi', povChapters: [] },
+        { id: 'mrs-williams', name: 'Mrs Williams', aliases: [], role: 'Senior Defiance agent', povChapters: [] },
+        { id: 'martin-creswell', name: 'Martin Creswell', aliases: ['Martin'], role: 'Senior Defiance leadership', povChapters: [] },
+        { id: 'tryon-street', name: 'Tryon Street', aliases: ['Tryon', 'Mr. Street'], role: "Dr Andrew Reed's former colleague, defected to the Devil's Den", povChapters: [] },
+        { id: 'detective-driscoll', name: 'Detective Driscoll', aliases: ['Driscoll'], role: 'Police detective, ally to Jonathan Reed', povChapters: [] },
+        { id: 'chief-singh', name: 'Chief Singh', aliases: ['Singh'], role: 'Police chief, ally to Jonathan Reed', povChapters: [] },
+        { id: 'jennifer', name: 'Jennifer', aliases: [], role: 'Witch, ally of Jonathan Reed', povChapters: [] },
+        { id: 'ruby', name: 'Ruby', aliases: [], role: 'Witch, ally of Jonathan Reed', povChapters: [] },
+        { id: 'carlos-valdez', name: 'Carlos Valdez', aliases: ['Carlos'], role: "South East Grotto member, defected to the Devil's Den", povChapters: [] },
+        { id: 'ambrose', name: 'Ambrose', aliases: [], role: "South East Grotto member, defected to the Devil's Den", povChapters: [] },
+        { id: 'damien-videl', name: 'Damien Videl', aliases: ['Damien'], role: "Devil's Den high priest, killer of Dr Andrew Reed", povChapters: [] },
+        { id: 'alexandra-turner', name: 'Alexandra Turner', aliases: ['Alexandra', 'Alex Turner'], role: "Devil's Den — Damien Videl's second-in-command", povChapters: [] },
+        { id: 'naberius', name: 'Naberius', aliases: [], role: 'Demon — Sarah May’s tormentor and former possessor', povChapters: [] },
+        { id: 'belial', name: 'Belial', aliases: [], role: "Demon — Devil's Den founder, seeks to reunite the divine source", povChapters: [] },
+        { id: 'ellis', name: 'Ellis', aliases: ['Pastor Ellis'], role: 'Lucifer’s vessel, megachurch pastor', povChapters: [] },
       ],
 
       knownLocations: [
@@ -40,8 +56,9 @@ export const DEVIANT = {
       ],
 
       knownFactions: [
-        { id: 'the-deviants', name: 'The Deviants', type: 'Malevolent cult' },
+        { id: 'the-deviants', name: 'The Deviants', type: "Defiance's elite team of demon-possessed operatives (protagonists)" },
         { id: 'defiance', name: 'Defiance', type: 'Counter-organization founded by Dr Andrew Reed' },
+        { id: 'devils-den', name: "Devil's Den", type: 'Malevolent demon-worshipping cult (antagonists)' },
       ],
     },
   },
