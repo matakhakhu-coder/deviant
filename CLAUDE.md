@@ -82,7 +82,7 @@ requires flipping one boolean in `flags.js`.
 | 1 | Parser Engine (PDF → structured JSON) | Complete — content/the-deviants.json generated |
 | 2 | Book Shell & Navigation | Complete |
 | 3 | Chapter Browser & Reader | Complete |
-| 4 | Character Encyclopedia | Pending |
+| 4 | Character Encyclopedia | Complete |
 | 5 | World Atlas (Locations + Factions) | Pending |
 | 6 | Cross-Link Engine | Pending |
 | 7 | Search & Discovery | Pending |

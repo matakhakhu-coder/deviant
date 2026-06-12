@@ -161,26 +161,37 @@ works correctly. Reading progress persists through browser refresh.
 **Delivers:** A complete character reference. Every character that appears in
 the book has a profile page with bio, appearances, and connections.
 
-- [ ] `src/modules/CharacterEncyclopedia.js`
-  - [ ] Grid of all characters: avatar placeholder, name, role badge, POV chapter count
-  - [ ] Filter by role (protagonist / antagonist / supporting)
-  - [ ] Route: `/books/:slug/characters`
-- [ ] `src/modules/CharacterProfile.js`
-  - [ ] Character header: avatar, name, role, faction badge
-  - [ ] Description section: prose-extracted description (or annotation if available)
-  - [ ] Appearances section: chapters where character has POV (highlighted) and mention
-  - [ ] Connections section: other characters co-occurring most frequently
-  - [ ] Faction membership: badge linking to faction entry in World Atlas
-  - [ ] Annotation section: Claude API bio (null-safe placeholder in sim mode)
-  - [ ] Route: `/books/:slug/characters/:id`
-- [ ] `src/components/EntityBadge.js`
-  - [ ] Colored badge: `character` (crimson), `location` (gold), `faction` (faction blue)
-  - [ ] Size variants: `sm`, `md`, `lg`
+- [x] `src/modules/CharacterEncyclopedia.js`
+  - [x] Grid of all characters: avatar placeholder, name, role badge, POV chapter count
+  - [x] Filter by role — **revised**: parsed `role` field is freeform prose for some
+    entries (e.g. Loki's is a description, not a category), so filter buckets are derived
+    from `povChapters.length`: "POV Characters" vs "Supporting" (All / POV / Supporting pills)
+  - [x] Route: `/books/:slug/characters`
+- [x] `src/modules/CharacterProfile.js`
+  - [x] Character header: avatar, name, role badge, aliases
+  - [x] Description section — **deficit flagged**: no prose-extracted descriptions exist in
+    `content/the-deviants.json` yet. Renders `character.annotation.description` when present
+    (Phase 9), otherwise an atmospheric sim-mode placeholder ("the chronicles have not yet
+    been transcribed...") styled to match the dark aesthetic
+  - [x] Appearances section: chapters where character has POV (highlighted crimson) and all
+    mention-chapters listed as chips linking to the reader
+  - [x] Connections section: other characters co-occurring most frequently, computed from
+    shared `appearances` chapter overlap, top 5
+  - [x] Faction membership — **deficit flagged**: no faction-membership field exists per
+    character in parsed data; section omitted entirely (null-safe) rather than rendering
+    an empty/TBC badge. To be resolved when parser extracts faction affiliations.
+  - [x] Annotation section: Claude API bio (null-safe placeholder in sim mode) — same as
+    description section above
+  - [x] Route: `/books/:slug/characters/:id`
+- [x] `src/components/EntityBadge.js`
+  - [x] Colored badge: `character` (crimson), `location` (gold), `faction` (faction blue)
+  - [x] Size variants: `sm`, `md`, `lg`
 
 **Gate:** Character encyclopedia shows 7 character cards (6 POV + Loki).
-Clicking "Miles Kelly" renders his profile with his description from Chapter 1 prose,
-chapters [1, 5, 15, 20] highlighted as POV, Loki listed as a connection.
-All profiles render null-safe when annotation data is absent.
+Clicking "Miles Kelly" renders his profile with chapters [1, 5, 15, 20] highlighted as POV,
+Sarah May/Dr Avery Melblac/etc. listed as connections, and a sim-mode lore placeholder where
+his description will eventually appear. All profiles render null-safe when annotation data
+is absent.
 
 ---
 

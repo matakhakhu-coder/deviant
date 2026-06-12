@@ -1,6 +1,6 @@
 import './style.css'
 import { resolveRoute, resolveCustomerView, navigate } from './core/router.js'
-import { getAllBooks, getBook, getChapter } from './core/bookLoader.js'
+import { getAllBooks, getBook, getChapter, getCharacter } from './core/bookLoader.js'
 import { DEVIANT } from './core/manifest.js'
 import * as Navbar from './components/Navbar.js'
 import * as Footer from './components/Footer.js'
@@ -8,6 +8,8 @@ import * as BookshelfView from './modules/BookshelfView.js'
 import * as BookDetailView from './modules/BookDetailView.js'
 import * as ChapterBrowser from './modules/ChapterBrowser.js'
 import * as ChapterReader from './modules/ChapterReader.js'
+import * as CharacterEncyclopedia from './modules/CharacterEncyclopedia.js'
+import * as CharacterProfile from './modules/CharacterProfile.js'
 
 const app = document.getElementById('app')
 
@@ -71,6 +73,21 @@ function mountCustomer(params) {
       }
       break
     }
+    case 'character-encyclopedia': {
+      content = DEVIANT.books[viewParams.slug]
+        ? CharacterEncyclopedia.render(getBook(viewParams.slug))
+        : notFoundView()
+      break
+    }
+    case 'character-profile': {
+      const book = DEVIANT.books[viewParams.slug] ? getBook(viewParams.slug) : null
+      const character = book ? getCharacter(viewParams.slug, viewParams.characterId) : null
+
+      content = book && character
+        ? CharacterProfile.render(book, character)
+        : notFoundView()
+      break
+    }
     case 'pending':
       content = pendingView(viewParams)
       break
@@ -86,6 +103,8 @@ function mountCustomer(params) {
   if (view === 'book-detail') BookDetailView.init()
   if (view === 'chapter-browser') ChapterBrowser.init()
   if (view === 'chapter-reader' && chapterReaderArgs) ChapterReader.init(...chapterReaderArgs)
+  if (view === 'character-encyclopedia') CharacterEncyclopedia.init()
+  if (view === 'character-profile') CharacterProfile.init()
 }
 
 /**

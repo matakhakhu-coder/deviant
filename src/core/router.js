@@ -77,8 +77,17 @@ export function resolveCustomerView(pathname) {
       }
     }
 
-    const phaseBySection = { characters: 4, world: 5 }
-    const label = { characters: 'Character Encyclopedia', world: 'World Atlas' }[section] ?? 'Page'
+    if (section === 'characters') {
+      if (segments.length === 3) {
+        return { view: 'character-encyclopedia', params: { slug } }
+      }
+      if (segments.length === 4) {
+        return { view: 'character-profile', params: { slug, characterId: segments[3] } }
+      }
+    }
+
+    const phaseBySection = { world: 5 }
+    const label = { world: 'World Atlas' }[section] ?? 'Page'
     return { view: 'pending', params: { label, phase: phaseBySection[section] ?? null, slug } }
   }
 

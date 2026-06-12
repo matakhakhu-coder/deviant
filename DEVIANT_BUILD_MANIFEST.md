@@ -17,7 +17,7 @@
 | 1 | Parser Engine | Complete — content/the-deviants.json generated (28 chapters; 3 synthesized — see deficits) |
 | 2 | Book Shell & Navigation | Complete — Navbar, Footer, BookshelfView, BookDetailView wired into mountCustomer(); SPA routing for /, /books, /books/:slug + pending/404 placeholders |
 | 3 | Chapter Browser & Reader | Complete — ChapterBrowser (POV filter pills) + ChapterReader (reading column, prev/next, progress tracking) wired into mountCustomer() |
-| 4 | Character Encyclopedia | Pending |
+| 4 | Character Encyclopedia | Complete — CharacterEncyclopedia (POV/Supporting filter) + CharacterProfile (appearances, connections, sim-mode lore placeholder) + EntityBadge |
 | 5 | World Atlas | Pending |
 | 6 | Cross-Link Engine | Pending |
 | 7 | Search & Discovery | Pending |
@@ -194,6 +194,12 @@ The following items must be resolved before any production deployment.
 10. Decision: is this platform public (anyone can explore) or private (password-gated reader)?
 11. Decision: will additional books beyond *The Deviants* be published at launch?
 12. Legal / copyright clearance for publishing full chapter text publicly online
+14. **No prose-extracted character descriptions or per-character faction membership
+    (Phase 4):** `content/the-deviants.json` character entries have no `description` and
+    no faction-affiliation field. CharacterProfile renders a sim-mode lore placeholder for
+    descriptions (resolved by Phase 9 annotations) and omits the faction-membership section
+    entirely (null-safe). If faction membership is wanted before Phase 9, the parser would
+    need a pass that cross-references faction `appearances` with character `appearances`.
 
 ---
 
