@@ -129,23 +129,26 @@ All breakpoints (390px, 768px, 1440px) render without horizontal scroll.
 **Delivers:** Readers can browse all chapters, filter by POV character, and read
 individual chapters in an atmospheric dark reader view.
 
-- [ ] `src/modules/ChapterBrowser.js`
-  - [ ] Chapter list: number, title, POV character badge, word count, reading time
-  - [ ] POV filter pills: one per character (All / Miles Kelly / Jonathan Reed / etc.)
-  - [ ] Filter updates list without page reload (custom event `dv:filterChapters`)
-  - [ ] Clicking chapter navigates to reader
-  - [ ] Route: `/books/:slug/chapters`
-- [ ] `src/modules/ChapterReader.js`
-  - [ ] Full chapter text rendered in reading column (max 680px, centered)
-  - [ ] Chapter header: number, title, POV character badge
-  - [ ] Prev / Next chapter navigation
-  - [ ] Reading progress tracked in `dv_progress_[slug]` localStorage
-  - [ ] Route: `/books/:slug/chapters/:id`
-  - [ ] Placeholder for entity cross-links (Phase 6 activates linker — plain text for now)
-- [ ] `src/core/bookLoader.js` — fully implemented
-  - [ ] Imports `content/[slug].json` statically (Vite static asset)
-  - [ ] Exports `getBook(slug)`, `getChapter(slug, id)`, `getCharacter(slug, id)`, etc.
-  - [ ] Null-safe: if book JSON missing, returns empty structure with TBC placeholders
+- [x] `src/modules/ChapterBrowser.js`
+  - [x] Chapter list: number, title, POV character badge, word count, reading time
+  - [x] POV filter pills: one per character with POV chapters (All / Miles Kelly / .../ Ensemble)
+  - [x] Filter updates list without page reload (client-side `classList.toggle('hidden')` in
+    `init()` — a custom event was unnecessary since the filter is purely local DOM state)
+  - [x] Clicking chapter navigates to reader
+  - [x] Route: `/books/:slug/chapters`
+- [x] `src/modules/ChapterReader.js`
+  - [x] Full chapter text rendered in reading column (max 680px, centered)
+  - [x] Chapter header: number, title, POV character badge (or "Ensemble")
+  - [x] Prev / Next chapter navigation
+  - [x] Reading progress tracked in `dv_progress_[slug]` localStorage
+  - [x] Route: `/books/:slug/chapters/:id`
+  - [x] Placeholder for entity cross-links (Phase 6 activates linker — plain escaped text for now)
+  - [x] `contentMissing` chapters (10, 16, 25) render an italic "text not yet available" notice
+    instead of empty body
+- [x] `src/core/bookLoader.js` — already fully implemented in Phase 0/1 scaffold
+  - [x] Imports `content/[slug].json` statically via `import.meta.glob` (Vite static asset)
+  - [x] Exports `getBook(slug)`, `getChapter(slug, id)`, `getCharacter(slug, id)`, etc.
+  - [x] Null-safe: if book JSON missing, returns empty structure with TBC placeholders
 
 **Gate:** Chapter browser renders all 28 chapters. POV filter for "Miles Kelly" shows exactly
 chapters 1, 5, 15, 20. Clicking Chapter 1 renders full text in reader. Prev/Next navigation

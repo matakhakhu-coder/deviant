@@ -67,8 +67,18 @@ export function resolveCustomerView(pathname) {
   if (segments[0] === 'books' && segments.length >= 3) {
     const slug = segments[1]
     const section = segments[2]
-    const phaseBySection = { chapters: 3, characters: 4, world: 5 }
-    const label = { chapters: 'Chapter Browser', characters: 'Character Encyclopedia', world: 'World Atlas' }[section] ?? 'Page'
+
+    if (section === 'chapters') {
+      if (segments.length === 3) {
+        return { view: 'chapter-browser', params: { slug } }
+      }
+      if (segments.length === 4) {
+        return { view: 'chapter-reader', params: { slug, chapterId: segments[3] } }
+      }
+    }
+
+    const phaseBySection = { characters: 4, world: 5 }
+    const label = { characters: 'Character Encyclopedia', world: 'World Atlas' }[section] ?? 'Page'
     return { view: 'pending', params: { label, phase: phaseBySection[section] ?? null, slug } }
   }
 

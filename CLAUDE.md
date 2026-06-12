@@ -81,7 +81,7 @@ requires flipping one boolean in `flags.js`.
 | 0 | Substrate (Project Init, Tooling, Manifest, Flags) | In Progress — code complete, Vercel connection TBC |
 | 1 | Parser Engine (PDF → structured JSON) | Complete — content/the-deviants.json generated |
 | 2 | Book Shell & Navigation | Complete |
-| 3 | Chapter Browser & Reader | Pending |
+| 3 | Chapter Browser & Reader | Complete |
 | 4 | Character Encyclopedia | Pending |
 | 5 | World Atlas (Locations + Factions) | Pending |
 | 6 | Cross-Link Engine | Pending |

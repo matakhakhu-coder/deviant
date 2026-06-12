@@ -1,11 +1,13 @@
 import './style.css'
 import { resolveRoute, resolveCustomerView, navigate } from './core/router.js'
-import { getAllBooks, getBook } from './core/bookLoader.js'
+import { getAllBooks, getBook, getChapter } from './core/bookLoader.js'
 import { DEVIANT } from './core/manifest.js'
 import * as Navbar from './components/Navbar.js'
 import * as Footer from './components/Footer.js'
 import * as BookshelfView from './modules/BookshelfView.js'
 import * as BookDetailView from './modules/BookDetailView.js'
+import * as ChapterBrowser from './modules/ChapterBrowser.js'
+import * as ChapterReader from './modules/ChapterReader.js'
 
 const app = document.getElementById('app')
 
@@ -39,6 +41,8 @@ function mountCustomer(params) {
   const { view, params: viewParams } = resolveCustomerView(params.pathname)
 
   let content
+  let chapterReaderArgs = null
+
   switch (view) {
     case 'bookshelf':
       content = BookshelfView.render(books)
@@ -47,6 +51,24 @@ function mountCustomer(params) {
       content = DEVIANT.books[viewParams.slug]
         ? BookDetailView.render(getBook(viewParams.slug))
         : notFoundView()
+      break
+    }
+    case 'chapter-browser': {
+      content = DEVIANT.books[viewParams.slug]
+        ? ChapterBrowser.render(getBook(viewParams.slug))
+        : notFoundView()
+      break
+    }
+    case 'chapter-reader': {
+      const book = DEVIANT.books[viewParams.slug] ? getBook(viewParams.slug) : null
+      const chapter = book ? getChapter(viewParams.slug, viewParams.chapterId) : null
+
+      if (book && chapter) {
+        content = ChapterReader.render(book, chapter)
+        chapterReaderArgs = [viewParams.slug, viewParams.chapterId]
+      } else {
+        content = notFoundView()
+      }
       break
     }
     case 'pending':
@@ -62,6 +84,8 @@ function mountCustomer(params) {
   Footer.init()
   if (view === 'bookshelf') BookshelfView.init()
   if (view === 'book-detail') BookDetailView.init()
+  if (view === 'chapter-browser') ChapterBrowser.init()
+  if (view === 'chapter-reader' && chapterReaderArgs) ChapterReader.init(...chapterReaderArgs)
 }
 
 /**
