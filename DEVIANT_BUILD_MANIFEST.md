@@ -14,7 +14,7 @@
 | Phase | Name | Status |
 |-------|------|--------|
 | 0 | Substrate | In Progress — code complete, Vercel connection TBC |
-| 1 | Parser Engine | Pending |
+| 1 | Parser Engine | Complete — content/the-deviants.json generated (28 chapters; 3 synthesized — see deficits) |
 | 2 | Book Shell & Navigation | Pending |
 | 3 | Chapter Browser & Reader | Pending |
 | 4 | Character Encyclopedia | Pending |
@@ -59,7 +59,8 @@
 | Setting | SunCity (maximum security prison) | Confirmed |
 | Cover Art | TBC — extract from PDF or source separately | TBC |
 | Synopsis | "A malevolent organisation and cult exists in this world. Their influence is felt at virtually every level of society. They worship an entity of great evil. Dr Andrew Reed is a criminal profiler who founded an organisation to fight this cult. He called it Defiance. Together with his agents they attempt to fight this force of evil." | Confirmed |
-| Parsed JSON | TBC — generated in Phase 1 | Pending |
+| Parsed JSON | `content/the-deviants.json` — 28 chapters, 7 characters, 3 locations, 2 factions | Confirmed |
+| Candidates JSON | `content/the-deviants-candidates.json` — Pass 2 entity candidates for manual review | Confirmed |
 | Annotations JSON | TBC — generated in Phase 9 | Pending |
 
 #### Confirmed POV Characters — *The Deviants*
@@ -176,8 +177,15 @@ The following items must be resolved before any production deployment.
 
 1. Platform production domain name (registration + DNS)
 2. Anthropic API key for Claude annotation layer (Phase 9)
-3. GitHub repository creation and Vercel connection (Phase 0)
-4. Staging Vercel URL (auto-generated Phase 0)
+3. ~~GitHub repository creation and Vercel connection (Phase 0)~~ — done
+4. ~~Staging Vercel URL (auto-generated Phase 0)~~ — done
+13. **Source manuscript gap (Phase 1):** `sources/the-deviants.pdf` has no heading
+    marker for Chapters 10, 16, and 25 — the body text transitions directly from
+    Chapter 9→11, 15→17, and 24→26. These three chapters are present in
+    `content/the-deviants.json` as placeholders (`contentMissing: true`, title/POV
+    from manifest TOC, 0 words) so the reader and chapter browser don't break, but
+    their prose is genuinely absent and needs to be resupplied by the author and
+    re-parsed.
 5. Platform logo and brand assets
 6. Book cover art for *The Deviants* (clean extract or resupplied)
 7. Platform tagline and marketing copy

@@ -54,26 +54,34 @@ Dark background (`#0A0A0F`) renders in browser. No console errors.
 structured JSON file in `content/` — the single source of truth for all frontend rendering.
 Running `npm run parse the-deviants` produces `content/the-deviants.json`.
 
-- [ ] `scripts/parse.js` created — full pipeline
-  - [ ] CLI: `node scripts/parse.js [book-slug]` — reads `sources/[slug].pdf`
-  - [ ] `pdf-parse` integration — extracts full text from PDF
-  - [ ] Segmenter — splits text into chapters using heading detection pattern
-    - [ ] Primary pattern: `/^(THE DEVIENTS|THE DEVIANTS)\s*\n\s*CHAPTER\s+(\d+)\s*\n\s*([^\n]+)/im`
-    - [ ] Fallback: double-newline density analysis for books without consistent heading format
-  - [ ] Entity extractor — Pass 1 (seed list from `DEVIANT.books[slug].knownCharacters` etc.)
-    - [ ] Name normalization: honorifics, first-name-only references, nickname resolution
-    - [ ] Alias detection: if "Miles" appears and "Miles Kelly" is a known character, resolve
-  - [ ] Entity extractor — Pass 2 (capitalized noun phrase discovery)
-    - [ ] Frequency filter: candidate must appear ≥3 times in a chapter
-    - [ ] Stoplist applied: common English words, month names, day names excluded
-    - [ ] Candidates written to `content/[slug]-candidates.json` for manual review
-  - [ ] Mention indexer — for each chapter, lists entity IDs that appear in text
-  - [ ] Reverse indexer — for each entity, lists chapter numbers it appears in
-  - [ ] Word count and reading time calculator (200 wpm baseline)
-  - [ ] Output serializer — writes valid `content/[slug].json` matching schema in `CLAUDE.md`
-  - [ ] Console progress: `[PARSE] Chapter 1/28 — Miles Kelly (847 words)` per chapter
-- [ ] `npm run parse` script added to `package.json`
-- [ ] `package.json` devDependency: `pdf-parse`
+- [x] `scripts/parse.js` created — full pipeline
+  - [x] CLI: `node scripts/parse.js [book-slug]` — reads `sources/[slug].pdf`
+  - [x] `pdf-parse` integration — extracts full text from PDF
+  - [x] Segmenter — splits text into chapters using heading detection pattern
+    - [x] Primary pattern (revised): `/^CHAPTER\s+(\d+)\s*\n(.+)$/gm` on normalized text — the
+      `THE DEVIENTS` book-title line precedes only Chapter 1's heading on the title page and is
+      not part of the recurring per-chapter pattern, so the regex matches on `CHAPTER N` + title
+      line alone (TOC entries use `CHAPTER N: Title` on one line and are excluded by this).
+    - [x] Fallback (revised): chapters 10, 16, 25 have no heading marker in the source PDF body
+      at all (confirmed: 9→11, 15→17, 24→26 transition directly with no gap). Rather than
+      double-newline density analysis, missing chapter ids are synthesized from
+      `knownCharacters.povChapters` (title/POV from the manifest TOC), flagged
+      `contentMissing: true` for null-safe placeholder rendering. **Deficit flagged** — source
+      manuscript is missing ~3 chapters' content; needs author follow-up.
+  - [x] Entity extractor — Pass 1 (seed list from `DEVIANT.books[slug].knownCharacters` etc.)
+    - [x] Name normalization: honorifics ("Dr "/"Mr "/etc.) stripped before matching
+    - [x] Alias detection: longest-alias-first word-boundary matching (e.g. "Andrew Reed" before "Andrew")
+  - [x] Entity extractor — Pass 2 (capitalized noun phrase discovery)
+    - [x] Frequency filter: candidate must appear ≥3 times in a chapter
+    - [x] Stoplist applied: common English words, month names, day names excluded
+    - [x] Candidates written to `content/[slug]-candidates.json` for manual review
+  - [x] Mention indexer — for each chapter, lists entity IDs that appear in text
+  - [x] Reverse indexer — for each entity, lists chapter numbers it appears in (`entityIndex`)
+  - [x] Word count and reading time calculator (200 wpm baseline)
+  - [x] Output serializer — writes valid `content/[slug].json`
+  - [x] Console progress: `[PARSE] Chapter 1/28 — Miles Kelly (2954 words)` per chapter
+- [x] `npm run parse` script added to `package.json`
+- [x] `package.json` devDependency: `pdf-parse`
 
 **Gate:** `npm run parse the-deviants` completes without errors.
 `content/the-deviants.json` exists and is valid JSON.
