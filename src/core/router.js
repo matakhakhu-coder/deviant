@@ -38,3 +38,39 @@ export function navigate(url, detail = {}) {
   window.history.pushState({}, '', url)
   document.dispatchEvent(new CustomEvent('dv:navigate', { detail: { url, ...detail } }))
 }
+
+/**
+ * Resolves a pathname within the customer render path into a view + params.
+ * Routes implemented so far: bookshelf (/, /books), book-detail (/books/:slug).
+ * Deeper routes (/books/:slug/chapters|characters|world, /search) are
+ * recognized but rendered as "pending phase" placeholders until their
+ * modules land in later phases.
+ *
+ * @param {string} pathname
+ * @returns {{ view: string, params: object }}
+ */
+export function resolveCustomerView(pathname) {
+  const segments = pathname.split('/').filter(Boolean)
+
+  if (segments.length === 0 || (segments.length === 1 && segments[0] === 'books')) {
+    return { view: 'bookshelf', params: {} }
+  }
+
+  if (segments[0] === 'search') {
+    return { view: 'pending', params: { label: 'Search', phase: 7 } }
+  }
+
+  if (segments[0] === 'books' && segments.length === 2) {
+    return { view: 'book-detail', params: { slug: segments[1] } }
+  }
+
+  if (segments[0] === 'books' && segments.length >= 3) {
+    const slug = segments[1]
+    const section = segments[2]
+    const phaseBySection = { chapters: 3, characters: 4, world: 5 }
+    const label = { chapters: 'Chapter Browser', characters: 'Character Encyclopedia', world: 'World Atlas' }[section] ?? 'Page'
+    return { view: 'pending', params: { label, phase: phaseBySection[section] ?? null, slug } }
+  }
+
+  return { view: 'not-found', params: {} }
+}

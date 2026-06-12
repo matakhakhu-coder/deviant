@@ -96,27 +96,27 @@ Chapter 1 `mentions.characters` includes `miles-kelly` and `loki`.
 **Delivers:** The public-facing shell. A visitor can land on the platform,
 see the book, and understand what they're exploring — before entering any chapter.
 
-- [ ] `src/components/Navbar.js`
-  - [ ] Logo (text fallback: "DEVIANT" in Cinzel if SVG TBC)
-  - [ ] Nav links: Books, Characters, World, Search
-  - [ ] Mobile hamburger (390px)
-  - [ ] Dark background, ghost text
-- [ ] `src/modules/BookshelfView.js`
-  - [ ] Renders all books registered in `DEVIANT.books`
-  - [ ] Each book card: cover (placeholder if TBC), title, author, chapter count, genre badges
-  - [ ] "Enter" CTA navigates to `/books/:slug`
-  - [ ] Null-safe: missing cover renders atmospheric dark placeholder SVG
-- [ ] `src/modules/BookDetailView.js`
-  - [ ] Book hero: cover art, title, author, synopsis
-  - [ ] Quick stats: chapters, characters, locations, factions
-  - [ ] Navigation grid: Read Chapters / Characters / World Atlas
-  - [ ] Route: `/books/:slug`
-- [ ] `src/components/Footer.js`
-  - [ ] Platform credit, author attribution for each loaded book
-  - [ ] "A DEVIANT Platform" attribution
-- [ ] All modules wired into `mountCustomer()` render/init sequence
-- [ ] SPA routing active: `/`, `/books`, `/books/:slug` all render correctly
-- [ ] 390px mobile fully functional
+- [x] `src/components/Navbar.js`
+  - [x] Logo (text fallback: "DEVIANT" in Cinzel — SVG remains TBC asset)
+  - [x] Nav links: Books, Search (Characters/World live on BookDetailView per-book, not global nav — navbar must not hard-code a book slug)
+  - [x] Mobile hamburger (390px)
+  - [x] Dark background, ghost text
+- [x] `src/modules/BookshelfView.js`
+  - [x] Renders all books registered in `DEVIANT.books`
+  - [x] Each book card: cover (placeholder if TBC), title, author, chapter count, character count badges
+  - [x] "Enter" CTA navigates to `/books/:slug`
+  - [x] Null-safe: missing cover renders atmospheric dark placeholder SVG
+- [x] `src/modules/BookDetailView.js`
+  - [x] Book hero: cover art, title, author, synopsis
+  - [x] Quick stats: chapters, characters, locations, factions
+  - [x] Navigation grid: Read Chapters / Characters / World Atlas
+  - [x] Route: `/books/:slug`
+- [x] `src/components/Footer.js`
+  - [x] Platform credit, author attribution for each loaded book
+  - [x] "A DEVIANT Platform" attribution
+- [x] All modules wired into `mountCustomer()` render/init sequence
+- [x] SPA routing active: `/`, `/books`, `/books/:slug` all render correctly (plus `resolveCustomerView()` placeholders for Phase 3-7 routes and 404 for unmatched paths)
+- [x] 390px mobile fully functional — verified via dev server screenshots (bookshelf, book detail, mobile nav toggle, pending placeholder, 404)
 
 **Gate:** Staging URL shows dark landing page. Book card for *The Deviants* renders with
 synopsis, chapter count (28), and character count. Clicking "Enter" navigates to book detail.

@@ -15,7 +15,7 @@
 |-------|------|--------|
 | 0 | Substrate | In Progress — code complete, Vercel connection TBC |
 | 1 | Parser Engine | Complete — content/the-deviants.json generated (28 chapters; 3 synthesized — see deficits) |
-| 2 | Book Shell & Navigation | Pending |
+| 2 | Book Shell & Navigation | Complete — Navbar, Footer, BookshelfView, BookDetailView wired into mountCustomer(); SPA routing for /, /books, /books/:slug + pending/404 placeholders |
 | 3 | Chapter Browser & Reader | Pending |
 | 4 | Character Encyclopedia | Pending |
 | 5 | World Atlas | Pending |

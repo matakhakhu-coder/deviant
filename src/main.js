@@ -1,29 +1,67 @@
 import './style.css'
-import { resolveRoute, navigate } from './core/router.js'
-import { getAllBooks } from './core/bookLoader.js'
+import { resolveRoute, resolveCustomerView, navigate } from './core/router.js'
+import { getAllBooks, getBook } from './core/bookLoader.js'
 import { DEVIANT } from './core/manifest.js'
+import * as Navbar from './components/Navbar.js'
+import * as Footer from './components/Footer.js'
+import * as BookshelfView from './modules/BookshelfView.js'
+import * as BookDetailView from './modules/BookDetailView.js'
 
 const app = document.getElementById('app')
 
+function pendingView({ label, phase }) {
+  return `
+    <main class="max-w-5xl mx-auto px-4 py-24 text-center">
+      <h1 class="font-display text-3xl text-dv-gold">${label ?? 'Page'}</h1>
+      <p class="mt-2 text-dv-ash font-mono">TBC &mdash; arrives in Phase ${phase ?? '?'}</p>
+      <a href="/" data-link class="inline-flex items-center justify-center mt-6 min-h-[48px] px-4 text-dv-ash hover:text-dv-gold transition-colors">&larr; Back to bookshelf</a>
+    </main>
+  `
+}
+
+function notFoundView() {
+  return `
+    <main class="max-w-5xl mx-auto px-4 py-24 text-center">
+      <h1 class="font-display text-3xl text-dv-crimson">404</h1>
+      <p class="mt-2 text-dv-ash">This page doesn't exist.</p>
+      <a href="/" data-link class="inline-flex items-center justify-center mt-6 min-h-[48px] px-4 text-dv-ash hover:text-dv-gold transition-colors">&larr; Back to bookshelf</a>
+    </main>
+  `
+}
+
 /**
- * Customer-facing render path: full landing + encyclopedia + atlas.
- * Phase 0: minimal landing scaffold only — full modules arrive in Phase 2+.
+ * Customer-facing render path: Navbar + page content + Footer.
+ * Sub-routes: bookshelf (/, /books), book-detail (/books/:slug),
+ * pending placeholders for Phases 3-7, 404 for anything else.
  */
 function mountCustomer(params) {
   const books = getAllBooks()
+  const { view, params: viewParams } = resolveCustomerView(params.pathname)
 
-  const html = `
-    <main class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-      <h1 class="font-display text-4xl md:text-6xl text-dv-gold tracking-wide">${DEVIANT.platform.name}</h1>
-      <p class="mt-2 text-dv-ash font-body">${DEVIANT.platform.fullName}</p>
-      <p class="mt-8 text-dv-ghost max-w-xl">
-        ${books.length} book${books.length === 1 ? '' : 's'} loaded.
-        ${books.map((b) => b.title).join(', ')}
-      </p>
-    </main>
-  `
+  let content
+  switch (view) {
+    case 'bookshelf':
+      content = BookshelfView.render(books)
+      break
+    case 'book-detail': {
+      content = DEVIANT.books[viewParams.slug]
+        ? BookDetailView.render(getBook(viewParams.slug))
+        : notFoundView()
+      break
+    }
+    case 'pending':
+      content = pendingView(viewParams)
+      break
+    default:
+      content = notFoundView()
+  }
 
-  app.innerHTML = html
+  app.innerHTML = Navbar.render() + content + Footer.render(books)
+
+  Navbar.init()
+  Footer.init()
+  if (view === 'bookshelf') BookshelfView.init()
+  if (view === 'book-detail') BookDetailView.init()
 }
 
 /**
@@ -70,7 +108,19 @@ function render() {
     default:
       mountCustomer(route.params)
   }
+
+  window.scrollTo(0, 0)
 }
+
+// Delegated click handler for internal links — keeps SPA navigation working
+// without binding per-render listeners on every <a data-link>.
+app.addEventListener('click', (event) => {
+  const link = event.target.closest('a[data-link]')
+  if (!link) return
+
+  event.preventDefault()
+  navigate(link.getAttribute('href'))
+})
 
 document.addEventListener('dv:navigate', render)
 window.addEventListener('popstate', render)
