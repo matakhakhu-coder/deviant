@@ -6,7 +6,7 @@ export const DEVIANT = {
     name: 'DEVIANT',
     fullName: 'The Mythology Engine',
     slug: 'deviant',
-    stagingUrl: null,
+    stagingUrl: 'https://deviant-one.vercel.app',
     productionUrl: null,
   },
 

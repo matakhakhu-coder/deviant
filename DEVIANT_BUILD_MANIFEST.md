@@ -33,10 +33,10 @@
 |-------|-------|--------|
 | Platform Name | DEVIANT | Confirmed |
 | Full Name | The Mythology Engine | Confirmed |
-| Staging Domain | TBC — created on Phase 0 Vercel connection | TBC |
+| Staging Domain | https://deviant-one.vercel.app | Confirmed |
 | Production Domain | TBC — domain registration required | TBC |
 | Vercel Account | matakhakhu-coder | Confirmed |
-| Repository | TBC — GitHub repo to be created | TBC |
+| Repository | https://github.com/matakhakhu-coder/deviant | Confirmed |
 | Platform Tagline | TBC — copy decision required | TBC |
 | Legal Entity | TBC | TBC |
 | Contact Email | matamelaramovha8@gmail.com | Confirmed (operator email) |

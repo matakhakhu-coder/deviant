@@ -96,7 +96,7 @@ requires flipping one boolean in `flags.js`.
 
 | Key | Value |
 |-----|-------|
-| **Staging URL** | TBC — created on Phase 0 Vercel connection |
+| **Staging URL** | https://deviant-one.vercel.app |
 | **Production domain** | TBC |
 | **Vercel account** | matakhakhu-coder |
 | **CI/CD** | Vercel auto-deploy on push to `main` |

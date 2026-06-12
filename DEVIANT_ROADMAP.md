@@ -40,8 +40,8 @@ directory structure, configuration architecture, and a live staging URL.
 - [x] `sources/` directory created — `.gitkeep` + `sources/.gitignore` (ignores *.pdf to avoid committing large binaries)
 - [x] `content/` directory created — `.gitkeep` (JSON files will live here)
 - [x] `scripts/launch.js` created — scans nulls in manifest, scans `true` flags, rewrites robots.txt
-- [ ] Vercel project connected to GitHub repo — push triggers auto-deploy
-- [ ] Staging URL live and returning 200
+- [x] Vercel project connected to GitHub repo — push triggers auto-deploy
+- [x] Staging URL live and returning 200
 
 **Gate:** `npm run dev` runs clean. `npm run build` exits 0. Staging URL accessible.
 Dark background (`#0A0A0F`) renders in browser. No console errors.
